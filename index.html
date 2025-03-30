@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hack Club | IP</title>
+	</head>
+	<body>
+		<header>
+			<h1>ip.hackclub.com</h1>
+			<p>
+				An experimental service providing unlimited
+				IP address geolocation and metadata for free,
+				for teens in
+				<a href="https://hackclub.com/" target="_blank">Hack Club</a>.
+				No API key needed.
+			</p>
+
+			<p>Open source at <a href="https://github.com/hackclub/ip">github.com/hackclub/ip</a>!</p>
+			<p>Questions? I'm @Malted on the Slack.</p>
+		</header>
+
+		<section>
+			<h2>Usage</h2>
+			<p>To query your current IP address:</p>
+			<pre><code>curl https://ip.hackclub.com/ip</code></pre>
+
+			<p>To query a different IP address:</p>
+			<pre><code>curl https://ip.hackclub.com/ip/ANY_IPv4_HERE</code></pre>
+		</section>
+		<section>
+			<h2>Result</h2>
+			<p>(Context: I'm at Harvard, on Eduroam, without a VPN on.)</p>
+			<pre><code>{
+	"network":"67.134.204.0/22",
+	"is_anonymous_proxy":false,
+	"is_satellite_provider":false,
+	"postal_code":"02138",
+	"latitude":"42.3737",
+	"longitude":"-71.1284",
+	"accuracy_radius":20,
+	"is_anycast":null,
+	"locale_code":"en",
+	"continent_code":"NA",
+	"continent_name":"North America",
+	"country_iso_code":"US",
+	"country_name":"United States",
+	"subdivision_1_iso_code":"MA",
+	"subdivision_1_name":"Massachusetts",
+	"subdivision_2_iso_code":null,
+	"subdivision_2_name":null,
+	"city_name":"Cambridge",
+	"metro_code":506,
+	"time_zone":"America/New_York",
+	"is_in_european_union":false,
+	"isp_name":"HARVARD-UNIV"
+}
+			</code></pre>
+		</section>
+
+		
+		<section>
+			<h2>Terms</h2>
+			<p>
+				You must be a teenager in the <a href="https://hackclub.com/slack">Hack Club Slack</a>.
+				Abuse means this will get shut down. We're a nonprofit funded by donations.
+				Data courtesy of MaxMind GeoLite2. Don't blame Hack Club if it's wrong or out of date.
+			</p>
+    		</section>
+	</body>
+</html>
