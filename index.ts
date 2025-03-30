@@ -40,7 +40,7 @@ Bun.serve({
 	routes: {
 		"/ip": async (req, server) => {
 			const start = performance.now()
-			const ip = server.requestIP(req)
+			const ip = req.headers.get("x-real-ip")
 			console.log({ip, req})
 			const [ipRes] = await q(ip.address)
 			console.log(Math.round(performance.now() - start) + " ms")
