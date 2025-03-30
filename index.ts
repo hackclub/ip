@@ -42,7 +42,7 @@ Bun.serve({
 			const start = performance.now()
 			const ip = req.headers.get("x-real-ip")
 			console.log({ip, req})
-			const [ipRes] = await q(ip.address)
+			const [ipRes] = await q(ip)
 			console.log(Math.round(performance.now() - start) + " ms")
 			return Response.json(ipRes)
 
