@@ -1,4 +1,5 @@
 import { sql } from "bun";
+import index from "./index.html";
 
 async function q(ip: string) {
 	return await sql`
@@ -38,6 +39,7 @@ async function q(ip: string) {
 
 Bun.serve({
 	routes: {
+		"/": index,
 		"/ip": async (req, server) => {
 			const start = performance.now()
 			const ip = req.headers.get("x-real-ip")
