@@ -8,6 +8,7 @@ ENV NODE_ENV=production
 
 FROM base AS release
 COPY --from=prerelease /usr/src/app/index.ts .
+COPY --from=prerelease /usr/src/app/index.html .
 
 USER bun
 EXPOSE 3000/tcp
