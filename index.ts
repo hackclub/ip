@@ -43,18 +43,16 @@ Bun.serve({
 		"/ip": async (req, server) => {
 			const start = performance.now()
 			const ip = req.headers.get("x-real-ip")
-			
 			console.log({ip, req})
 			const [ipRes] = await q(ip)
 			console.log(Math.round(performance.now() - start) + " ms")
-			return Response.json(ipRes, {headers:{"Access-Control-Allow-Origin": "*"}})
-
+			return Response.json(ipRes, { headers : {"Access-Control-Allow-Origin": "*" }})
 		},
 		"/ip/:ip": async ({ params }) => {
 			const start = performance.now()
 			const [ipRes] = await q(params.ip)
 			console.log(Math.round(performance.now() - start) + " ms")
-			return Response.json(ipRes, {headers:{"Access-Control-Allow-Origin": "*"}})
+			return Response.json(ipRes, { headers : {"Access-Control-Allow-Origin": "*" }})
 		}
 	}
 })
